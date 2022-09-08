@@ -1,0 +1,153 @@
+#!/bin/bash
+
+#Set job requirements
+#SBATCH --job-name=PrediXcan
+#SBATCH -t 99:00:00
+#SBATCH -N 1
+#SBATCH --tasks-per-node 1
+#SBATCH --mail-type=BEGIN,END
+#SBATCH --mail-user=zeynep.asgel@uvic.cat
+
+module load 2020
+module load Python/3.8.2-GCCcore-9.3.0
+
+
+
+
+python3 /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/Predict.py \
+--model_db_path /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/models/JTI/JTI_Brain_Nucleus_accumbens_basal_ganglia.db \
+--vcf_genotypes /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/GWAS_merged_4_2021_rsid.vcf.gz \
+--vcf_mode genotyped \
+--prediction_summary_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Nucleus_accumbens_basal_ganglia_FE_summary_JTI.txt \
+--prediction_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/2021/Brain_Nucleus_accumbens_basal_ganglia_FE_predict_JTI.txt \
+--capture /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/2021/Brain_Nucleus_accumbens_basal_ganglia_SNPs_data_FE.txt.gz \
+--verbosity 9 \
+--throw 
+
+
+python3 /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/Predict.py \
+--model_db_path /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/models/JTI/JTI_Brain_Hypothalamus.db \
+--vcf_genotypes /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/GWAS_merged_4_2021_rsid.vcf.gz \
+--vcf_mode genotyped \
+--prediction_summary_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Hypothalamus_FE_summary_JTI.txt \
+--prediction_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Hypothalamus_FE_predict_JTI.txt \
+--capture /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Hypothalamus_SNPs_data_FE.txt.gz \
+--verbosity 9 \
+--throw 
+
+python3 /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/Predict.py \
+--model_db_path /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/models/JTI/JTI_Whole_Blood.db \
+--vcf_genotypes /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/GWAS_merged_4_2021_rsid.vcf.gz \
+--vcf_mode genotyped \
+--prediction_summary_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Whole_Blood_FE_summary_JTI.txt \
+--prediction_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Whole_Blood_FE_predict_JTI.txt \
+--capture /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Whole_Blood_SNPs_data_FE.txt.gz \
+--verbosity 9 \
+--throw 
+
+python3 /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/Predict.py \
+--model_db_path /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/models/JTI/JTI_Brain_Spinal_cord_cervical_c-1.db \
+--vcf_genotypes /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/GWAS_merged_4_2021_rsid.vcf.gz \
+--vcf_mode genotyped \
+--prediction_summary_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Spinal_cord_FE_summary_JTI.txt \
+--prediction_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Spinal_cord_FE_predict_JTI.txt \
+--capture /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Spinal_cord_SNPs_data_FE.txt.gz \
+--verbosity 9 \
+--throw 
+
+
+
+python3 /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/Predict.py \
+--model_db_path /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/models/JTI/JTI_Brain_Substantia_nigra.db \
+--vcf_genotypes /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/GWAS_merged_4_2021_rsid.vcf.gz \
+--vcf_mode genotyped \
+--prediction_summary_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Substantia_nigra_FE_summary_JTI.txt \
+--prediction_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Substantia_nigra_FE_predict_JTI.txt \
+--capture /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Substantia_nigra_SNPs_data_FE.txt.gz \
+--verbosity 9 \
+--throw 
+
+python3 /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/Predict.py \
+--model_db_path /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/models/JTI/JTI_Brain_Amygdala.db \
+--vcf_genotypes /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/GWAS_merged_4_2021_rsid.vcf.gz \
+--vcf_mode genotyped \
+--prediction_summary_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Amygdala_FE_summary_JTI.txt \
+--prediction_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Amygdala_FE_predict_JTI.txt \
+--capture /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Amygdala_SNPs_data_FE.txt.gz \
+--verbosity 9 \
+--throw 
+
+python3 /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/Predict.py \
+--model_db_path /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/models/JTI/JTI_Brain_Anterior_cingulate_cortex_BA24.db \
+--vcf_genotypes /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/GWAS_merged_4_2021_rsid.vcf.gz \
+--vcf_mode genotyped \
+--prediction_summary_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Anterior_cingulate_cortex_BA24_FE_summary_JTI.txt \
+--prediction_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Anterior_cingulate_cortex_BA24_FE_predict_JTI.txt \
+--capture /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Anterior_cingulate_cortex_BA24_SNPs_data_FE.txt.gz \
+--verbosity 9 \
+--throw 
+
+python3 /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/Predict.py \
+--model_db_path /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/models/JTI/JTI_Brain_Caudate_basal_ganglia.db \
+--vcf_genotypes /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/GWAS_merged_4_2021_rsid.vcf.gz \
+--vcf_mode genotyped \
+--prediction_summary_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Caudate_basal_ganglia_FE_summary_JTI.txt \
+--prediction_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Caudate_basal_ganglia_FE_predict_JTI.txt \
+--capture /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Caudate_basal_ganglia_SNPs_data_FE.txt.gz \
+--verbosity 9 \
+--throw 
+
+python3 /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/Predict.py \
+--model_db_path /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/models/JTI/JTI_Brain_Cerebellar_Hemisphere.db \
+--vcf_genotypes /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/GWAS_merged_4_2021_rsid.vcf.gz \
+--vcf_mode genotyped \
+--prediction_summary_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Cerebellar_Hemisphere_FE_summary_JTI.txt \
+--prediction_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Cerebellar_Hemisphere_FE_predict_JTI.txt \
+--capture /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Cerebellar_Hemisphere_SNPs_data_FE.txt.gz \
+--verbosity 9 \
+--throw 
+
+python3 /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/Predict.py \
+--model_db_path /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/models/JTI/JTI_Brain_Putamen_basal_ganglia.db \
+--vcf_genotypes /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/GWAS_merged_4_2021_rsid.vcf.gz \
+--vcf_mode genotyped \
+--prediction_summary_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Putamen_basal_ganglia_FE_summary_JTI.txt \
+--prediction_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Putamen_basal_ganglia_FE_predict_JTI.txt \
+--capture /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Putamen_basal_ganglia_SNPs_data_FE.txt.gz \
+--verbosity 9 \
+--throw 
+
+python3 /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/Predict.py \
+--model_db_path /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/models/JTI/JTI_Brain_Cerebellum.db \
+--vcf_genotypes /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/GWAS_merged_4_2021_rsid.vcf.gz \
+--vcf_mode genotyped \
+--prediction_summary_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Cerebellum_FE_summary_JTI.txt \
+--prediction_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Cerebellum_FE_predict_JTI.txt \
+--capture /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Cerebellum_SNPs_data_FE.txt.gz \
+--verbosity 9 \
+--throw 
+
+python3 /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/Predict.py \
+--model_db_path /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/models/JTI/JTI_Brain_Frontal_Cortex_BA9.db \
+--vcf_genotypes /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/GWAS_merged_4_2021_rsid.vcf.gz \
+--vcf_mode genotyped \
+--prediction_summary_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Frontal_Cortex_BA9_FE_summary_JTI.txt \
+--prediction_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Frontal_Cortex_BA9_FE_predict_JTI.txt \
+--capture /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Frontal_Cortex_BA9_SNPs_data_FE.txt.gz \
+--verbosity 9 \
+--throw 
+
+python3 /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/Predict.py \
+--model_db_path /home/juditc/ADHD/GWAS_TDAH/TDAH/GWAS_TDAH_b38/MetaXcan/software/models/JTI/JTI_Brain_Hippocampus.db \
+--vcf_genotypes /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/GWAS_merged_4_2021_rsid.vcf.gz \
+--vcf_mode genotyped \
+--prediction_summary_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Hippocampus_FE_summary_JTI.txt \
+--prediction_output /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Hippocampus_FE_predict_JTI.txt \
+--capture /home/juditc/ADHD/FE/TWAS2/GWAS4_2021/Brain_Hippocampus_SNPs_data_FE.txt.gz \
+--verbosity 9 \
+--throw 
+
+
+
+
+
